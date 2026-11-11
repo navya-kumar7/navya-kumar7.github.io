@@ -1,2 +1,2 @@
-# navyakumar.github.io
+# navya-kumar7.github.io
 Academic website
