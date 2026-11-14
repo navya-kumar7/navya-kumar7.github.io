@@ -14,13 +14,13 @@
 
   <style>
     :root {
-      --bg: #faf9f6;
+      --bg: #f8fafc;          /* Crisp, cool off-white (use #ffffff for pure white) */
       --surface: #ffffff;
-      --text: #1f2328;
-      --muted: #57606a;
+      --text: #1e293b;
+      --muted: #64748b;
       --accent: #1b4965;      /* Deep academic slate-blue */
       --accent-soft: #eef4f8;
-      --border: #e5e2dc;
+      --border: #e2e8f0;
     }
 
     * {
@@ -110,14 +110,24 @@
       align-items: flex-start;
     }
 
-    .intro img {
+    .profile-pic {
       width: 190px;
       height: 215px;
-      object-fit: cover;
       border-radius: 12px;
+      overflow: hidden;
       flex-shrink: 0;
       border: 1px solid var(--border);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.25);
+      transform-origin: center;
+      display: block;
     }
 
     .bio p {
@@ -125,31 +135,16 @@
       margin-bottom: 16px;
     }
 
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .contact-info {
       margin-top: 20px;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: var(--text);
     }
 
-    .contact-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.88rem;
+    .contact-label {
       color: var(--muted);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 5px 12px;
-      border-radius: 999px;
-      text-decoration: none !important;
-      transition: all 0.15s ease;
-    }
-
-    .contact-pill:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      background: var(--accent-soft);
+      margin-right: 4px;
     }
 
     /* Research Sections */
@@ -210,14 +205,6 @@
       color: #ffffff;
     }
 
-    footer {
-      margin-top: 72px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
     /* Mobile Adjustments */
     @media (max-width: 640px) {
       body {
@@ -231,7 +218,7 @@
         flex-direction: column;
         align-items: center;
       }
-      .intro img {
+      .profile-pic {
         width: 175px;
         height: 195px;
       }
@@ -253,7 +240,9 @@
   </header>
 
   <section class="intro">
-    <img src="profile.png" alt="Photo of Navya Kumar">
+    <div class="profile-pic">
+      <img src="profile.png" alt="Photo of Navya Kumar">
+    </div>
     <div class="bio">
       <p>
         I am a Pre-Doctoral Fellow at Columbia University, working with Professor
@@ -265,10 +254,9 @@
         with a growing focus on industrial organization (IO) and electricity markets.
         You can view my full background in my <a href="CV.pdf" target="_blank" rel="noopener">CV</a>.
       </p>
-      <div class="contact-links">
-        <a href="mailto:nk3186@columbia.edu" class="contact-pill">nk3186@columbia.edu</a>
-        <a href="mailto:kumarnavya77@gmail.com" class="contact-pill">kumarnavya77@gmail.com</a>
-      </div>
+      <p class="contact-info">
+        <span class="contact-label">Email:</span> nk3186@columbia.edu &middot; kumarnavya77@gmail.com
+      </p>
     </div>
   </section>
 
@@ -294,10 +282,6 @@
       </li>
     </ul>
   </section>
-
-  <footer>
-    &copy; 2026 Navya Kumar
-  </footer>
 
 </body>
 </html>
