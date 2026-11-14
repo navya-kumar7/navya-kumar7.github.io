@@ -6,87 +6,298 @@
   <title>Navya Kumar | Economics | Columbia University</title>
   <meta name="description" content="Navya Kumar is a Pre-Doctoral Fellow in Economics at Columbia University, preparing for a PhD in Economics. Economics graduate of the University of Cambridge, working on environmental and public economics.">
   <meta name="keywords" content="Navya Kumar, economics, Columbia University, University of Cambridge, Cambridge University, PhD, pre-doctoral fellow, environmental economics, public economics, energy, electricity markets">
+
+  <!-- Google Fonts: Editorial Serif + Clean Sans-Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      color: #222;
-      line-height: 1.6;
-      background: #fff;
+    :root {
+      --bg: #faf9f6;
+      --surface: #ffffff;
+      --text: #1f2328;
+      --muted: #57606a;
+      --accent: #1b4965;      /* Deep academic slate-blue */
+      --accent-soft: #eef4f8;
+      --border: #e5e2dc;
     }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.68;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+      gap: 16px;
     }
-    header h1 { margin: 0; font-size: 2em; font-weight: normal; }
-    header nav a { font-size: 1.1em; }
-    a { color: #1a5a96; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .intro { display: flex; gap: 28px; align-items: flex-start; }
-    .intro img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
+
+    .name-block h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      margin: 0;
+      font-size: 2.35rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin: 6px 0 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 6px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .cv-btn:hover {
+      background-color: var(--accent-soft);
+      border-color: var(--accent);
+    }
+
+    /* Links */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .bio a {
+      text-decoration: underline;
+      text-decoration-color: rgba(27, 73, 101, 0.35);
+      text-underline-offset: 3px;
+    }
+
+    .bio a:hover {
+      text-decoration-color: var(--accent);
+    }
+
+    /* Intro & Bio */
+    .intro {
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+    }
+
+    .intro img {
+      width: 190px;
+      height: 215px;
+      object-fit: cover;
+      border-radius: 12px;
       flex-shrink: 0;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
+
+    .bio p {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 999px;
+      text-decoration: none !important;
+      transition: all 0.15s ease;
+    }
+
+    .contact-pill:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    /* Research Sections */
+    section.research {
+      margin-top: 48px;
+    }
+
     h2 {
-      font-weight: normal;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 4px;
-      margin-top: 40px;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
     }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
-    @media (max-width: 600px) {
-      .intro { flex-direction: column; align-items: center; }
+
+    .paper-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .paper-item {
+      padding: 12px 0;
+    }
+
+    .paper-title {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .paper-title a {
+      color: var(--text);
+    }
+
+    .paper-title a:hover {
+      color: var(--accent);
+    }
+
+    .badge-pdf {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      border-radius: 4px;
+      vertical-align: middle;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .badge-pdf:hover {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 640px) {
+      body {
+        padding: 40px 20px 60px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .intro {
+        flex-direction: column;
+        align-items: center;
+      }
+      .intro img {
+        width: 175px;
+        height: 195px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Navya Kumar</h1>
-    <nav><a href="CV.pdf">CV</a></nav>
+    <div class="name-block">
+      <h1>Navya Kumar</h1>
+      <p class="subtitle">Pre-Doctoral Fellow in Economics &middot; Columbia University</p>
+    </div>
+    <nav>
+      <a href="CV.pdf" class="cv-btn" target="_blank" rel="noopener">
+        Curriculum Vitae &rarr;
+      </a>
+    </nav>
   </header>
 
   <section class="intro">
     <img src="profile.png" alt="Photo of Navya Kumar">
-    <div>
+    <div class="bio">
       <p>
         I am a Pre-Doctoral Fellow at Columbia University, working with Professor
         Robert Metcalfe on environmental and public economics projects. Before this,
         I completed my undergraduate studies in Economics at the University of Cambridge.
       </p>
       <p>
-        I am interested in studying government policies and evaluating welfare.
-        I want to learn IO theory about the electricity market.
-        Here is my <a href="cv.pdf">CV</a>.
+        My research interests lie in evaluating government policies and social welfare,
+        with a growing focus on industrial organization (IO) and electricity markets.
+        You can view my full background in my <a href="CV.pdf" target="_blank" rel="noopener">CV</a>.
       </p>
-      <p>
-        Email: <a href="mailto:kumarnavya77@gmail.com">kumarnavya77@gmail.com</a>
-        or <a href="mailto:nk3186@columbia.edu">nk3186@columbia.edu</a>
-      </p>
+      <div class="contact-links">
+        <a href="mailto:nk3186@columbia.edu" class="contact-pill">nk3186@columbia.edu</a>
+        <a href="mailto:kumarnavya77@gmail.com" class="contact-pill">kumarnavya77@gmail.com</a>
+      </div>
     </div>
   </section>
 
-  <h2>Working Papers</h2>
-  <ul>
-    <li>
-      <a href="energy_crisis.pdf">The Impact of the Rise in Energy Prices during the UK Energy Crisis</a>
-    </li>
-  </ul>
+  <section class="research">
+    <h2>Working Papers</h2>
+    <ul class="paper-list">
+      <li class="paper-item">
+        <span class="paper-title">
+          <a href="energy_crisis.pdf" target="_blank" rel="noopener">
+            The Impact of the Rise in Energy Prices during the UK Energy Crisis
+          </a>
+        </span>
+        <a href="energy_crisis.pdf" class="badge-pdf" target="_blank" rel="noopener">PDF</a>
+      </li>
+    </ul>
+  </section>
 
-  <h2>Works in Progress</h2>
-  <ul>
-    <li>Switching Costs</li>
-  </ul>
+  <section class="research">
+    <h2>Works in Progress</h2>
+    <ul class="paper-list">
+      <li class="paper-item">
+        <span class="paper-title">Switching Costs</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2026 Navya Kumar
+  </footer>
 
 </body>
 </html>
